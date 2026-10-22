@@ -1,0 +1,11 @@
+package br.com.mrt.clientev2.application.service;
+
+import br.com.mrt.clientev2.application.repository.ClienteRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class ClienteApplicationService implements ClienteService {
+    private final ClienteRepository clienteRepository;
+}
