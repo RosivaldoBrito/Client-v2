@@ -1,12 +1,12 @@
 package br.com.mrt.clientev2.application.api;
 
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Value;
 
 import java.util.UUID;
 
 @Builder
-@Getter
+@Value
 public class ClienteResponse {
     private UUID idCliente;
 }
