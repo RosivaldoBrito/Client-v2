@@ -19,6 +19,6 @@ public class ClienteApplicationService implements ClienteService {
         log.info("[inicia] ClienteApplicationService - cadrastaNovoCliente");
         Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
         log.info("[finaliza] ClienteApplicationService - cadrastaNovoCliente");
-        return null;
+        return ClienteResponse.builder().idCliente((cliente.getIdCliente())).build();
     }
 }
