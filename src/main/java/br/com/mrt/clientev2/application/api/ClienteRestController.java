@@ -42,6 +42,8 @@ public class ClienteRestController implements ClienteAPI {
 
     @Override
     public void patchAlteraDadosCLiente(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        log.info("[inicia] ClienteRestController - patchAlteraDadosCliente");
         
+        log.info("[finalizado] ClienteRestController - patchAlteraDadosCliente");
     }
 }
