@@ -39,4 +39,9 @@ public class ClienteRestController implements ClienteAPI {
         log.info("[finalizado] ClienteRestController - getBuscaClientePorID");
         return detalhado;
     }
+
+    @Override
+    public void patchAlteraDadosCLiente(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        
+    }
 }
