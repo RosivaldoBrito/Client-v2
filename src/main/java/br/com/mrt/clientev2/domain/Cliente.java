@@ -1,6 +1,7 @@
 package br.com.mrt.clientev2.domain;
 
 
+import br.com.mrt.clientev2.application.api.ClienteAlteradoRequest;
 import br.com.mrt.clientev2.application.api.ClienteRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -31,13 +32,16 @@ public class Cliente {
     private String nomeCompleto;
     @CPF
     private String cpf;
+    @Enumerated(EnumType.STRING)
     @NotNull
-    @NotBlank
+    private Sexo sexo;
+    @NotNull
     private String email;
     @Size(min = 10, max = 13)
     private String telefone;
     @NotNull
-    @NotBlank
+    private String celular;
+    @NotNull
     private LocalDate dataNascimento;
     private LocalDateTime dataHoraCadastro;
     private LocalDateTime dataHoraAtualizacao;
@@ -50,6 +54,14 @@ public class Cliente {
         this.telefone = clienteRequest.getTelefone();
         this.dataNascimento = clienteRequest.getDataNascimento();
         this.dataHoraCadastro = LocalDateTime.now();
+        this.celular = clienteRequest.getCelular();
+        this.sexo = clienteRequest.getSexo();
 
+    }
+
+    public void alteraCliente(ClienteAlteradoRequest clienteAlteradoRequest) {
+        this.email = clienteAlteradoRequest.getEmail();
+        this.telefone = clienteAlteradoRequest.getTelefone();
+        this.celular = clienteAlteradoRequest.getCelular();
     }
 }

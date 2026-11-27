@@ -1,6 +1,7 @@
 package br.com.mrt.clientev2.application.api;
 
 
+import br.com.mrt.clientev2.domain.Sexo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -30,6 +31,9 @@ public class ClienteRequest {
     @Size(min = 10, max = 13)
     private String telefone;
     @NotNull
-    @NotBlank
+    private Sexo sexo;
+    @NotNull
+    private String celular;
+    @NotNull
     private LocalDate dataNascimento;
 }
