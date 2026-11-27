@@ -50,7 +50,7 @@ public class ClienteRestController implements ClienteAPI {
     @Override
     public void deleteClientePorID(UUID idCliente) {
         log.info("[inicia] ClienteRestController - deleteClientePorID");
-
+        clienteService.deletaClientePorId(idCliente);
         log.info("[finaliza] ClienteRestController - deleteClientePorID");
     }
 }
