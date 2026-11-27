@@ -1,9 +1,6 @@
 package br.com.mrt.clientev2.application.service;
 
-import br.com.mrt.clientev2.application.api.ClienteDetalhadoResponse;
-import br.com.mrt.clientev2.application.api.ClienteListResponse;
-import br.com.mrt.clientev2.application.api.ClienteRequest;
-import br.com.mrt.clientev2.application.api.ClienteResponse;
+import br.com.mrt.clientev2.application.api.*;
 import br.com.mrt.clientev2.application.repository.ClienteRepository;
 import br.com.mrt.clientev2.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -41,5 +38,11 @@ public class ClienteApplicationService implements ClienteService {
         Cliente cliente = clienteRepository.buscaPorId(idCliente);
         log.info("[finaliza] ClienteApplicationService - buscaClientePorID  ");
         return new ClienteDetalhadoResponse(cliente);
+    }
+
+    @Override
+    public void alteraDadosCliente(UUID idCliente, ClienteAlteradoRequest clienteAlteradoRequest) {
+        log.info("[inicia] ClienteApplicationService - alteraDadosCliente ");
+        log.info("[finaliza] ClienteApplicationService - alteraDadosCliente ");
     }
 }
